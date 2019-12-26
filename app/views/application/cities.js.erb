@@ -1,0 +1,12 @@
+var state = document.getElementById("cities");
+
+// Clear the options in the select box
+state.innerHTML = "";
+var placeholder = document.createElement("option");
+placeholder.text = "Choose a city";
+placeholder.value = "";
+placeholder.placeholder = true;
+state.appendChild(placeholder);
+<% @cities.each do |s| %>
+   state.options[state.options.length] = new Option('<%= s[1] %>', '<%= s[1] %>')
+<% end %>
